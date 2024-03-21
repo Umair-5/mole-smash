@@ -1,0 +1,30 @@
+
+.board{
+    background-image: url(b94cc9753e674518e4bb3ef1bc3fd9f3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: fit-content;
+    cursor: url(cursor.png),auto;
+    margin: 0% auto;
+}
+.row{
+    display: flex;
+}
+.block{
+    width: 120px;
+    height: 100px;
+    
+}
+.mole{
+    
+    background-image: url(images-removebg-preview.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img{
+    width: 120px;
+    height: 100px;
+}
+#banner{
+    display: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images-removebg-preview.png" type="image/x-icon">
+    <title>Mole Smash</title>
+</head>
+
+<body>
+    <button onclick="start()">Start</button>
+    <label for="score">Score:<input type="number" name="" id="point" value=0></label>
+    <div class="board">
+        <div class="row">
+            <div class="block " id="block-0"></div>
+            <div class="block " id="block-1"></div>
+            <div class="block " id="block-2"></div>
+            <div class="block " id="block-3"></div>
+            <div class="block " id="block-4"></div>
+        </div>
+        <div class="row">
+            <div class="block " id="block-5"></div>
+            <div class="block " id="block-6"></div>
+            <div class="block " id="block-7"></div>
+            <div class="block " id="block-8"></div>
+            <div class="block " id="block-9"></div>
+        </div>
+        <div class="row">
+            <div class="block " id="block-10"></div>
+            <div class="block " id="block-11"></div>
+            <div class="block " id="block-12"></div>
+            <div class="block " id="block-13"></div>
+            <div class="block " id="block-14"></div>
+        </div>
+        <div class="row">
+            <div class="block " id="block-15"></div>
+            <div class="block " id="block-16"></div>
+            <div class="block " id="block-17"></div>
+            <div class="block " id="block-18"></div>
+            <div class="block " id="block-19"></div>
+        </div>
+    </div>
+    <div id="banner">
+        <h1>Game Over</h1>
+<h3 id="displayScore"></h3>
+<button onclick="start()">Try again</button>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>
