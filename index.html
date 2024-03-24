@@ -4,14 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="mole-img.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/images-removebg-preview.png" type="image/x-icon">
     <title>Mole Smash</title>
 </head>
 
 <body>
-    <button onclick="start()">Start</button>
-    <label for="score">Score:<input type="number" name="" id="point" value=0></label>
+    <nav><a href="index.html">
+            <h1 class="henny-penny">Mole Smash</h1>
+        </a></nav>
+    <header>
+        <button onclick="start()">Start</button>
+        <label for="score" id="score">Score:<input type="number" name="" id="point" readonly value=0
+                onfocus="blur()"></label>
+    </header>
     <div class="board">
         <div class="row">
             <div class="block " id="block-0"></div>
@@ -19,34 +28,62 @@
             <div class="block " id="block-2"></div>
             <div class="block " id="block-3"></div>
             <div class="block " id="block-4"></div>
-        </div>
-        <div class="row">
             <div class="block " id="block-5"></div>
             <div class="block " id="block-6"></div>
+
+        </div>
+        <div class="row">
             <div class="block " id="block-7"></div>
             <div class="block " id="block-8"></div>
             <div class="block " id="block-9"></div>
-        </div>
-        <div class="row">
             <div class="block " id="block-10"></div>
             <div class="block " id="block-11"></div>
             <div class="block " id="block-12"></div>
             <div class="block " id="block-13"></div>
-            <div class="block " id="block-14"></div>
+
         </div>
         <div class="row">
+            <div class="block " id="block-14"></div>
             <div class="block " id="block-15"></div>
             <div class="block " id="block-16"></div>
             <div class="block " id="block-17"></div>
             <div class="block " id="block-18"></div>
             <div class="block " id="block-19"></div>
+            <div class="block " id="block-20"></div>
+
+        </div>
+        <div class="row">
+            <div class="block " id="block-21"></div>
+            <div class="block " id="block-22"></div>
+            <div class="block " id="block-23"></div>
+            <div class="block " id="block-24"></div>
+            <div class="block " id="block-25"></div>
+            <div class="block " id="block-26"></div>
+            <div class="block " id="block-27"></div>
+
+        </div>
+        <div class="row">
+            <div class="block " id="block-28"></div>
+            <div class="block " id="block-29"></div>
+            <div class="block " id="block-30"></div>
+            <div class="block " id="block-31"></div>
+            <div class="block " id="block-32"></div>
+            <div class="block " id="block-33"></div>
+            <div class="block " id="block-34"></div>
+
         </div>
     </div>
     <div id="banner">
         <h1>Game Over</h1>
-<h3 id="displayScore"></h3>
-<button onclick="start()">Try again</button>
+        <h3 id="displayScore"></h3>
+        <h4 id="highScore"></h4>
+        <button onclick="start()">Try again</button>
     </div>
+    <audio id="beepSound" src="/beep-Sound effect.mp4"></audio>
+    <audio id="gameOverSound" src="/gameOverSound.mp3"></audio>
+    <footer>
+        <p>Developed by <a href="https://uskdev.netlify.app/">USK</a></p>
+    </footer>
 </body>
 
 <script src="app.js"></script>

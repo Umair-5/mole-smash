@@ -3,15 +3,19 @@ var gameInProgress = false;
 function start() {
     if (gameInProgress) return;
     gameInProgress = true;
-    var num = Math.floor(Math.random() * 20);
+    var num = Math.floor(Math.random() * 35);
     var divId = "block-" + num;
     var div = document.getElementById(divId);
     mole = document.createElement("img");
     mole.setAttribute('class', 'mole');
-    mole.src = "images-removebg-preview.png";
+    mole.src = "mole-img.png";
     div.appendChild(mole);
     mole.addEventListener('click', score);
     mole.addEventListener('click', moveMole);
+    var beepSound = document.getElementById("beepSound");
+    mole.addEventListener('click', function () {
+        beepSound.play()
+    });
     var banner = document.querySelector("#banner");
     banner.style.display = "none"
 }
@@ -21,6 +25,11 @@ function score() {
     var displayPoints = document.getElementById("point");
     displayPoints.value = parseInt(displayPoints.value) + 1;
     currentScore = displayPoints.value
+    var highScore = localStorage.getItem("highScore");
+    if (!highScore || currentScore > parseInt(highScore)) {
+        localStorage.setItem("highScore", currentScore);
+    }
+
 }
 var block;
 var previousBlockId;
@@ -29,27 +38,26 @@ function moveMole() {
     var divId;
     var div;
     mole.setAttribute('class', 'mole');
-    mole.src = "images-removebg-preview.png";
+    mole.src = "mole-img.png";
 
     do {
-        var num = Math.floor(Math.random() * 20);
-        console.log(num)
+        var num = Math.floor(Math.random() * 35);
         divId = "block-" + num;
         div = document.getElementById(divId);
 
-    } 
+    }
     while (divId === previousBlockId);
-    // while (!div);
     previousBlockId = divId;
     div.appendChild(mole);
 
 }
 function stopGame() {
     gameInProgress = false;
+    var gameOverSound = document.getElementById("gameOverSound").play();
     var banner = document.querySelector("#banner");
     banner.style.display = "block"
     var displayScore = document.querySelector("#displayScore")
-    displayScore.innerHTML = `Your Score is ${currentScore}`;
+    displayScore.innerHTML = `Score: ${currentScore}`;
     var displayPoints = document.getElementById("point");
     displayPoints.value = 0
     var blocks = document.querySelectorAll('.block');
@@ -58,6 +66,9 @@ function stopGame() {
             block.removeChild(mole);
         }
     });
+    document.querySelector("#highScore").innerHTML = `High Score: ${localStorage.getItem("highScore")}`;
+
+
 }
 
 document.querySelector('.board').addEventListener('click', function (event) {
@@ -65,50 +76,4 @@ document.querySelector('.board').addEventListener('click', function (event) {
         stopGame();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
